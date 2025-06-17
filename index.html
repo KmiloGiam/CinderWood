@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinderWood - Banda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-dark bg-dark fixed-top justify-content-center d-none">
+        <div class="container justify-content-center">
+            <span class="navbar-brand fw-bold fs-2 mx-auto text-center w-100">CinderWood</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center justify-content-center text-white">
+        <div class="hero-overlay"></div>
+        <div class="container text-center position-relative">
+            <h1 class="display-1 fw-bold mb-4 hero-title">CinderWood</h1>
+            <a href="#about" class="btn btn-outline-light btn-lg">Conoce más</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-4 fw-bold mb-4">Sobre la Banda</h2>
+                    <div class="about-image-frame mx-auto mb-4">
+                        <img src="imgs/Grupo1.JPG" alt="Foto de la banda CinderWood" class="about-image">
+                    </div>
+                    <p class="lead mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit integer nisi, felis scelerisque curabitur vel taciti sociis mi platea, torquent nullam sem dis mus metus sodales non.
+                    </p>
+                    <p class="fs-5 mb-4">
+                        Sodales imperdiet nostra vulputate eu vehicula est luctus nam, metus velit mollis posuere platea ullamcorper senectus aliquam felis, eleifend blandit nascetur suspendisse erat neque diam.
+                    </p>
+                    <p class="fs-5">
+                        Nullam vehicula justo eget diam facilisis, vitae tincidunt nisi tincidunt. Sed vitae nisi at libero cursus tincidunt. Donec vel sapien id libero tincidunt tincidunt. Sed vitae nisi at libero cursus tincidunt. Donec vel sapien id libero tincidunt tincidunt.
+                    </p>
+                    <!-- Botón para ir a la sección de integrantes -->
+                    <a href="#members" class="btn btn-outline-dark btn-lg mt-4" id="scrollToMembersBtn">
+                        Conoce a los integrantes
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section id="members" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold">Los Integrantes</h2>
+                    <p class="lead">Conoce a los artistas detrás de la música</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Vocalista -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card bg-secondary text-white h-100 member-card">
+                        <img src="imgs/Sebas.jpg" class="card-img-top member-photo" alt="Vocalista">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Sebas</h5>
+                            <p class="card-text text-warning fw-semibold">
+                                <i class="fas fa-microphone me-2"></i>Vocalista
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guitarrista -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card bg-secondary text-white h-100 member-card">
+                        <img src="imgs/sasa.jpg" class="card-img-top member-photo" alt="Guitarrista">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Jorgito</h5>
+                            <p class="card-text text-warning fw-semibold">
+                                <i class="fas fa-guitar me-2"></i>Guitarrista
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bajista -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card bg-secondary text-white h-100 member-card">
+                        <img src="imgs/Camilo.jpg" class="card-img-top member-photo" alt="Bajista">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Camilito</h5>
+                            <p class="card-text text-warning fw-semibold">
+                                <i class="fas fa-guitar me-2"></i>Bajista
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Baterista -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card bg-secondary text-white h-100 member-card">
+                        <img src="imgs/Juanjo.jpg" class="card-img-top member-photo" alt="Baterista">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Baterista</h5>
+                            <p class="card-text text-warning fw-semibold">
+                                <i class="fas fa-drum me-2"></i>Baterista
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="fw-bold">CinderWood</h5>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-spotify"></i></a>
+                    </div>
+                    <p class="mb-0 mt-2">&copy; 2024 CinderWood. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
