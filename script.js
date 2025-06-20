@@ -172,6 +172,34 @@ document.addEventListener("DOMContentLoaded", () => {
     
     ¡Gracias por visitar nuestro sitio web!
     `)
+
+    // Botón flotante para volver arriba (hero)
+    const backToHeroBtn = document.getElementById("backToHeroBtn")
+    const heroSection = document.getElementById("home")
+
+    function toggleBackToHeroBtn() {
+        if (window.scrollY > (heroSection ? heroSection.offsetHeight * 0.7 : 200)) {
+            backToHeroBtn.style.display = "flex"
+        } else {
+            backToHeroBtn.style.display = "none"
+        }
+    }
+
+    window.addEventListener("scroll", toggleBackToHeroBtn)
+    toggleBackToHeroBtn()
+
+    // Scroll suave al hacer clic en el botón
+    if (backToHeroBtn) {
+        backToHeroBtn.addEventListener("click", function(e) {
+            e.preventDefault()
+            if (heroSection) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                })
+            }
+        })
+    }
 })
 
 // Easter egg - Konami code

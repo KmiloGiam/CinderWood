@@ -220,9 +220,8 @@
 .event-image-frame-only {
     border-radius: 18px;
     overflow: hidden;
-    transition: box-shadow 0.3s, border 0.3s;
     box-shadow: 0 4px 16px rgba(44, 62, 80, 0.08);
-    border: 3px solid transparent;
+    border: 3px solid #e9ecef;
     background: #fff;
     position: relative;
     width: 100%;
@@ -236,36 +235,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s, filter 0.3s;
     border-radius: 12px;
     display: block;
-}
-
-
-/* Hover effect: show frame and highlight image */
-
-.event-image-frame-only:hover {
-    border: 3px solid #d4a574;
-    box-shadow: 0 8px 32px rgba(212, 165, 116, 0.25), 0 2px 8px rgba(44, 62, 80, 0.10);
-    background: linear-gradient(90deg, #fff 80%, #d4a57422 100%);
-}
-
-.event-image-frame-only:hover .event-image-only {
-    transform: scale(1.04) rotate(-1deg);
-    filter: brightness(1.08) saturate(1.1);
-}
-
-
-/* Responsive fix for small screens */
-
-@media (max-width: 768px) {
-    .event-image-frame-only {
-        aspect-ratio: 1 / 1;
-        min-height: 180px;
-    }
-    .event-image-only {
-        border-radius: 10px;
-    }
 }
 
 
@@ -328,4 +299,33 @@ html {
 ::-moz-selection {
     background-color: #d4a574;
     color: #000;
+}
+
+
+/* Botón flotante para volver arriba */
+
+#backToHeroBtn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 9999;
+    width: 52px;
+    height: 52px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0.92;
+    transition: opacity 0.2s, box-shadow 0.2s;
+    background: rgba(44, 62, 80, 0.85);
+    border: 2px solid #d4a574;
+    color: #fff !important;
+}
+
+#backToHeroBtn:hover {
+    opacity: 1;
+    background: #d4a574;
+    color: #222 !important;
+    border-color: #d4a574;
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.18);
 }
