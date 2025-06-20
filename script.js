@@ -54,6 +54,22 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    // Smooth scrolling para el botón "Ver eventos destacados"
+    const scrollToEventsBtn = document.getElementById("scrollToEventsBtn")
+    if (scrollToEventsBtn) {
+        scrollToEventsBtn.addEventListener("click", function(e) {
+            e.preventDefault()
+            const eventsSection = document.getElementById("events")
+            if (eventsSection) {
+                const offsetTop = eventsSection.offsetTop - 40
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth",
+                })
+            }
+        })
+    }
+
     // Active navigation highlighting
     window.addEventListener("scroll", () => {
         const sections = document.querySelectorAll("section")
