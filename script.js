@@ -54,6 +54,22 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    // Smooth scrolling para el botón "Ver eventos destacados"
+    const scrollToEventsBtn = document.getElementById("scrollToEventsBtn")
+    if (scrollToEventsBtn) {
+        scrollToEventsBtn.addEventListener("click", function(e) {
+            e.preventDefault()
+            const eventsSection = document.getElementById("events")
+            if (eventsSection) {
+                const offsetTop = eventsSection.offsetTop - 40
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth",
+                })
+            }
+        })
+    }
+
     // Active navigation highlighting
     window.addEventListener("scroll", () => {
         const sections = document.querySelectorAll("section")
@@ -156,6 +172,34 @@ document.addEventListener("DOMContentLoaded", () => {
     
     ¡Gracias por visitar nuestro sitio web!
     `)
+
+    // Botón flotante para volver arriba (hero)
+    const backToHeroBtn = document.getElementById("backToHeroBtn")
+    const heroSection = document.getElementById("home")
+
+    function toggleBackToHeroBtn() {
+        if (window.scrollY > (heroSection ? heroSection.offsetHeight * 0.7 : 200)) {
+            backToHeroBtn.style.display = "flex"
+        } else {
+            backToHeroBtn.style.display = "none"
+        }
+    }
+
+    window.addEventListener("scroll", toggleBackToHeroBtn)
+    toggleBackToHeroBtn()
+
+    // Scroll suave al hacer clic en el botón
+    if (backToHeroBtn) {
+        backToHeroBtn.addEventListener("click", function(e) {
+            e.preventDefault()
+            if (heroSection) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                })
+            }
+        })
+    }
 })
 
 // Easter egg - Konami code
