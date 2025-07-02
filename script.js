@@ -21,21 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Smooth scrolling para el botón "Conoce más"
-    const conoceMasBtn = document.querySelector('a[href="#about"].btn')
-
-    function smoothScrollToAbout(e) {
-        e.preventDefault()
-        const aboutSection = document.getElementById("about")
-        if (aboutSection) {
-            const offsetTop = aboutSection.offsetTop - 40
-            window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth",
-            })
-        }
-    }
+    const conoceMasBtn = document.querySelector('a.hero-btn-lower[href="#about"]');
     if (conoceMasBtn) {
-        conoceMasBtn.addEventListener("click", smoothScrollToAbout)
+        conoceMasBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const aboutSection = document.getElementById("about");
+            if (aboutSection) {
+                const offsetTop = aboutSection.offsetTop - 40;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth",
+                });
+            }
+        });
     }
 
     // Smooth scrolling para el botón "Conoce a los integrantes"
@@ -68,6 +66,70 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }
         })
+    }
+
+    // Smooth scrolling para el botón "Próxima Canción"
+    const scrollToMusicBtn = document.getElementById("scrollToEventsBtn");
+    if (scrollToMusicBtn) {
+        scrollToMusicBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const musicSection = document.getElementById("music");
+            if (musicSection) {
+                const offsetTop = musicSection.offsetTop - 40;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth",
+                });
+            }
+        });
+    }
+
+    // Smooth scrolling para el botón "Ir a Redes Sociales"
+    const scrollToSocialBtn = document.getElementById("scrollToSocialBtn");
+    if (scrollToSocialBtn) {
+        scrollToSocialBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const socialSection = document.getElementById("social");
+            if (socialSection) {
+                const offsetTop = socialSection.offsetTop - 40;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth",
+                });
+            }
+        });
+    }
+
+    // Smooth scrolling para el botón "Línea Temporal"
+    const scrollToTimelineBtn = document.getElementById("scrollToTimelineBtn");
+    if (scrollToTimelineBtn) {
+        scrollToTimelineBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const timelineSection = document.getElementById("timeline");
+            if (timelineSection) {
+                const offsetTop = timelineSection.offsetTop - 40;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth",
+                });
+            }
+        });
+    }
+
+    // Smooth scrolling para el botón "Ver Contenido" en línea temporal
+    const scrollToEventsSectionBtn = document.getElementById("scrollToEventsSectionBtn");
+    if (scrollToEventsSectionBtn) {
+        scrollToEventsSectionBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const eventsSection = document.getElementById("events");
+            if (eventsSection) {
+                const offsetTop = eventsSection.offsetTop - 40;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth",
+                });
+            }
+        });
     }
 
     // Active navigation highlighting
@@ -160,19 +222,6 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(card)
     })
 
-    // Console log for band info
-    console.log(`
-    🎸 CinderWood - Rock que enciende el alma 🎸
-    
-    Integrantes:
-    🎤 Alex Rivera - Vocalista
-    🎸 Marcus Stone - Guitarrista  
-    🎸 Sofia Bass - Bajista
-    🥁 Jake Thunder - Baterista
-    
-    ¡Gracias por visitar nuestro sitio web!
-    `)
-
     // Botón flotante para volver arriba (hero)
     const backToHeroBtn = document.getElementById("backToHeroBtn")
     const heroSection = document.getElementById("home")
@@ -200,22 +249,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     }
-})
 
-// Easter egg - Konami code
-const konamiCode = []
-const konamiSequence = [
-    "ArrowUp",
-    "ArrowUp",
-    "ArrowDown",
-    "ArrowDown",
-    "ArrowLeft",
-    "ArrowRight",
-    "ArrowLeft",
-    "ArrowRight",
-    "KeyB",
-    "KeyA",
-]
+    // Smooth scrolling para el nombre de la banda en la navbar
+    const navHomeBtn = document.getElementById("navHomeBtn");
+    if (navHomeBtn) {
+        navHomeBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const heroSection = document.getElementById("home");
+            if (heroSection) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+        });
+    }
+})
 
 document.addEventListener("keydown", (e) => {
     konamiCode.push(e.code)

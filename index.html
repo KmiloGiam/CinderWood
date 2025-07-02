@@ -12,18 +12,58 @@
 
 <body>
     <!-- Header -->
-    <nav class="navbar navbar-dark bg-dark fixed-top justify-content-center d-none">
-        <div class="container justify-content-center">
-            <span class="navbar-brand fw-bold fs-2 mx-auto text-center w-100">Cinderwood</span>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid px-2">
+            <div class="d-flex w-100 align-items-center justify-content-center position-relative flex-nowrap">
+                <!-- Botón hamburguesa para móvil -->
+                <button class="navbar-toggler d-lg-none order-1 order-lg-0 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Contenedor centrado para botones y nombre -->
+                <div class="d-none d-lg-flex align-items-center justify-content-center w-100 gap-3">
+                    <!-- Botones a la izquierda -->
+                    <div class="d-flex align-items-center gap-1">
+                        <a href="#about" class="btn btn-link text-light px-2 py-2 fw-semibold nav-header-link">Sobre la Banda</a>
+                        <a href="#music" class="btn btn-link text-light px-2 py-2 fw-semibold nav-header-link">Próxima Canción</a>
+                    </div>
+                    <!-- Nombre centrado -->
+                    <a href="#home" class="navbar-brand fw-bold fs-2 mx-3 text-center nav-center-brand text-white nav-header-link order-2 order-lg-0 ms-auto d-lg-block d-none" id="navHomeBtn">Cinderwood</a>
+                    <!-- Botones a la derecha -->
+                    <div class="d-flex align-items-center gap-1">
+                        <a href="#social" class="btn btn-link text-light px-2 py-2 fw-semibold nav-header-link">Redes Sociales</a>
+                        <a href="#events" class="btn btn-link text-light px-2 py-2 fw-semibold nav-header-link">Contenido</a>
+                    </div>
+                </div>
+                <!-- Menú colapsable solo en móvil -->
+                <div class="collapse navbar-collapse w-100 d-lg-none order-3" id="mainNavbar">
+                    <div class="d-flex flex-column align-items-center mt-3">
+                        <a href="#about" class="btn btn-link text-light px-2 py-2 fw-semibold nav-header-link">Sobre la Banda</a>
+                        <a href="#music" class="btn btn-link text-light px-2 py-2 fw-semibold nav-header-link">Próxima Canción</a>
+                        <a href="#social" class="btn btn-link text-light px-2 py-2 fw-semibold nav-header-link">Redes Sociales</a>
+                        <a href="#events" class="btn btn-link text-light px-2 py-2 fw-semibold nav-header-link">Contenido</a>
+                    </div>
+                </div>
+                <!-- Nombre a la derecha solo en móvil -->
+                <a href="#home" class="navbar-brand fw-bold fs-2 ms-auto text-end nav-center-brand text-white nav-header-link d-lg-none order-4" id="navHomeBtnMobile">Cinderwood</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero-section d-flex align-items-center justify-content-center text-white">
+        <!-- Video de fondo escritorio/tablet -->
+        <video class="hero-bg-video d-none d-sm-block" autoplay loop muted playsinline>
+            <source src="imgs/CinderWood.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        <!-- Video de fondo móvil -->
+        <video class="hero-bg-video d-block d-sm-none" autoplay loop muted playsinline>
+            <source src="imgs/CinderWoodV.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
         <div class="hero-overlay"></div>
         <div class="container text-center position-relative">
-            <h1 class="display-1 fw-bold mb-4 hero-title">Cinderwood</h1>
-            <a href="#about" class="btn btn-outline-light btn-lg">Conoce más</a>
+            <a href="#about" class="btn btn-outline-light btn-lg hero-btn-lower">Conoce más</a>
         </div>
     </section>
 
@@ -45,83 +85,126 @@
                         Conformada por Jorge (guitarrista) quien desde su ingenio, le da el toque adecuado para entregar lo mejor al público, Camilo (bajista) usa su agilidad para que cada nota vibre en las personas, Juan (baterista) utiliza su potencia para que cada golpe haga
                         mover cada parte del público y Sebas (vocalista) entrega cada canción como si fuese una experiencia vivida, para que así, conecten con Cinderwood.
                     </p>
-                    <!-- Botón para ir a la sección de integrantes -->
-                    <a href="#members" class="btn btn-outline-dark btn-lg mt-4" id="scrollToMembersBtn">
-                        Conoce a los integrantes
+                    <!-- Botón para ir a la sección de próxima canción -->
+                    <a href="#music" class="btn btn-outline-dark btn-lg mt-4" id="scrollToEventsBtn">
+                        Próxima Canción
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Members Section -->
-    <section id="members" class="py-5 bg-dark text-white">
+    <!-- Próxima Canción  Section -->
+    <section id="music" class="bg-dark text-white">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-4 fw-bold">Los Integrantes</h2>
-                    <p class="lead">Conoce a los artistas detrás de la música</p>
-                </div>
-            </div>
-            <div class="row g-4">
-                <!-- Vocalista -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="card bg-secondary text-white h-100 member-card">
-                        <img src="imgs/Sebas.jpg" class="card-img-top member-photo" alt="Vocalista">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Sebas</h5>
-                            <p class="card-text text-warning fw-semibold">
-                                <i class="fas fa-microphone me-2"></i>Vocalista
-                            </p>
+                <div class="col-lg-10 mx-auto text-center">
+                    <h2 class="display-4 fw-bold mb-4">Próxima Canción</h2>
+                    <p class="lead mb-4">
+                        ¡Muy pronto podrás escuchar nuestras primeras canciones originales!<br> Estamos trabajando en nuevas composiciones y grabaciones para compartir nuestra pasión y mensaje contigo.<br> Síguenos en redes sociales para no perderte ningún
+                        lanzamiento.
+                    </p>
+                    <!-- Cuadro de la próxima canción -->
+                    <div class="next-song-card mx-auto mb-4 p-3">
+                        <div class="next-song-cover mb-3 mx-auto">
+                            <img src="imgs/PiD.jpg" alt="Portada próxima canción" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="next-song-title fw-bold fs-4">
+                            Pure in Deep
+                        </div>
+                        <div class="text-muted fst-italic">
+                            Próximamente disponible
                         </div>
                     </div>
-                </div>
-
-                <!-- Guitarrista -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="card bg-secondary text-white h-100 member-card">
-                        <img src="imgs/sasa.jpg" class="card-img-top member-photo" alt="Guitarrista">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Jorgito</h5>
-                            <p class="card-text text-warning fw-semibold">
-                                <i class="fas fa-guitar me-2"></i>Guitarrista
-                            </p>
-                        </div>
+                    <div class="d-flex justify-content-center gap-3 mb-4">
+                        <a href="#" class="btn btn-outline-light btn-lg disabled" tabindex="-1" aria-disabled="true">
+                            <i class="fab fa-spotify me-2"></i>Próximamente en Spotify
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-lg disabled" tabindex="-1" aria-disabled="true">
+                            <i class="fab fa-youtube me-2"></i>Próximamente en YouTube
+                        </a>
                     </div>
-                </div>
-
-                <!-- Bajista -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="card bg-secondary text-white h-100 member-card">
-                        <img src="imgs/Camilo.jpg" class="card-img-top member-photo" alt="Bajista">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Camilito</h5>
-                            <p class="card-text text-warning fw-semibold">
-                                <i class="fas fa-guitar me-2"></i>Bajista
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Baterista -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="card bg-secondary text-white h-100 member-card">
-                        <img src="imgs/Juanjo.jpg" class="card-img-top member-photo" alt="Baterista">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Juanjito</h5>
-                            <p class="card-text text-warning fw-semibold">
-                                <i class="fas fa-drum me-2"></i>Baterista
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center mt-5">
-                    <!-- Botón para ir a la sección de eventos destacados -->
-                    <a href="#events" class="btn btn-outline-light btn-lg" id="scrollToEventsBtn">
-                        Contenido
+                    <!-- Botón para ir a la sección de redes sociales -->
+                    <a href="#social" class="btn btn-outline-light btn-lg mt-2" id="scrollToSocialBtn">
+                        <i class="fas fa-users me-2"></i>Ir a Redes Sociales
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redes Sociales Section -->
+    <section id="social" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h2 class="display-4 fw-bold mb-4">Síguenos en Redes Sociales</h2>
+                    <p class="lead mb-4">
+                        Mantente al tanto de nuestras novedades, lanzamientos y contenido exclusivo.
+                    </p>
+                    <div class="d-flex justify-content-center gap-4 social-section-links">
+                        <a href="https://www.instagram.com/cinderwoodmusic" class="btn btn-instagram btn-lg" title="Instagram" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram me-2"></i>Instagram
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCLTwCs-xYZ6Uy65VL8xDCOg" class="btn btn-youtube btn-lg" title="YouTube" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube me-2"></i>YouTube
+                        </a>
+                        <a href="#" class="btn btn-spotify btn-lg" title="Spotify" target="_blank" rel="noopener">
+                            <i class="fab fa-spotify me-2"></i>Spotify
+                        </a>
+                    </div>
+                    <div class="band-logo-frame mx-auto mt-4 mb-4">
+                        <div class="band-logo-inner">
+                            <img src="imgs/CinderWood.jpg" alt="Logo CinderWood" class="band-logo-img">
+                        </div>
+                    </div>
+                    <!-- Botón para ir a la sección de línea temporal -->
+                    <a href="#timeline" class="btn btn-outline-dark btn-lg mb-3" id="scrollToTimelineBtn">
+                        <i class="fas fa-clock me-2"></i>Línea Temporal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Línea Temporal Section -->
+    <section id="timeline" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="display-4 fw-bold mb-5 text-center">Línea Temporal</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2023</span>
+                                <h5 class="fw-bold mb-1">Nacimiento de Cinderwood</h5>
+                                <p class="mb-0">La banda se forma con la visión de crear música original y transmitir un mensaje auténtico.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2024</span>
+                                <h5 class="fw-bold mb-1">Primeras Composiciones</h5>
+                                <p class="mb-0">Comienzan los ensayos y la creación de las primeras canciones propias.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2025</span>
+                                <h5 class="fw-bold mb-1">Lanzamiento de "Pure in Deep"</h5>
+                                <p class="mb-0">La banda se prepara para lanzar su primer sencillo en plataformas digitales.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Botón para ir a la sección de contenido -->
+                    <div class="text-center">
+                        <a href="#events" class="btn btn-outline-light btn-lg mt-4" id="scrollToEventsSectionBtn">
+                            <i class="fas fa-images me-2"></i>Ver Contenido
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
